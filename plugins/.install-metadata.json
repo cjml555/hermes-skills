@@ -1,0 +1,67 @@
+{
+  "hermes-relay": {
+    "pinned": false,
+    "revision": "62de6b51289d933a3f8d68841652b044130aa72f",
+    "source": "https://github.com/Codename-11/hermes-relay.git#plugin"
+  },
+  "holographic": {
+    "catalog": {
+      "name": "holographic",
+      "pin": "46b6f9084bd6ebd13262fb2360f3314c352f4be8",
+      "repo": "https://github.com/itpartypattaya/hermes-plugin-holographic",
+      "sha": "46b6f9084bd6ebd13262fb2360f3314c352f4be8",
+      "tier": "community"
+    },
+    "pinned": true,
+    "revision": "46b6f9084bd6ebd13262fb2360f3314c352f4be8",
+    "source": "https://github.com/itpartypattaya/hermes-plugin-holographic"
+  },
+  "homeassistant": {
+    "catalog": {
+      "name": "homeassistant",
+      "pin": "ba30cb0cf86c52bdb5cde98974bc062e97966529",
+      "repo": "https://github.com/NousResearch/hermes-homeassistant",
+      "sha": "ba30cb0cf86c52bdb5cde98974bc062e97966529",
+      "tier": "official"
+    },
+    "pinned": true,
+    "revision": "ba30cb0cf86c52bdb5cde98974bc062e97966529",
+    "source": "https://github.com/NousResearch/hermes-homeassistant"
+  },
+  "honcho": {
+    "catalog": {
+      "name": "honcho",
+      "pin": "f014a64306bac21f233f51a8e5cddf94a704f62d",
+      "repo": "https://github.com/plastic-labs/honcho",
+      "sha": "f014a64306bac21f233f51a8e5cddf94a704f62d",
+      "tier": "community"
+    },
+    "pinned": true,
+    "revision": "f014a64306bac21f233f51a8e5cddf94a704f62d",
+    "source": "https://github.com/plastic-labs/honcho#hermes-plugin-honcho"
+  },
+  "quota": {
+    "catalog": {
+      "name": "quota",
+      "pin": "ce8593a25ff61c32dd1e929fe2f87502cb6408cc",
+      "repo": "https://github.com/rarf/hermes-quota-plugin",
+      "sha": "ce8593a25ff61c32dd1e929fe2f87502cb6408cc",
+      "tier": "community"
+    },
+    "pinned": true,
+    "revision": "ce8593a25ff61c32dd1e929fe2f87502cb6408cc",
+    "source": "https://github.com/rarf/hermes-quota-plugin"
+  },
+  "spotify": {
+    "catalog": {
+      "name": "spotify",
+      "pin": "4d492b1dc5326af3e38bb2cf3e4b9ad6d65f0072",
+      "repo": "https://github.com/NousResearch/hermes-official-plugins",
+      "sha": "4d492b1dc5326af3e38bb2cf3e4b9ad6d65f0072",
+      "tier": "official"
+    },
+    "pinned": true,
+    "revision": "4d492b1dc5326af3e38bb2cf3e4b9ad6d65f0072",
+    "source": "https://github.com/NousResearch/hermes-official-plugins#spotify"
+  }
+}

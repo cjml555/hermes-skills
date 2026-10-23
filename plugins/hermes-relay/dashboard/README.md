@@ -1,0 +1,192 @@
+# Hermes-Relay Dashboard Plugin — Frontend
+
+React UI that runs inside the hermes-agent dashboard via the upstream Plugin
+SDK. It covers paired sessions, pairing QR generation, bridge activity, media
+inspection, and remote-access setup. The build output (`dist/index.js`) is
+**committed to git** because the dashboard `<script src=...>` loads it verbatim
+— operators never run the build.
+
+The **Connect mobile app** action on Overview and Devices is intentionally
+independent of the Hermes-Relay service. It renders a tokenless setup QR containing only
+`{"dashboard_url":"<canonical dashboard base>"}` so Android can add and verify the
+standard Dashboard/Gateway connection. Hermes-Relay pairing remains a separate,
+explicit **Pair new device** flow.
+
+Pairing receipts show the advertised Dashboard and Relay surfaces. The dialog
+distinguishes Android Dashboard ingress from routes the current CLI+UI can use.
+Direct URL-and-code pairing and signed Secure Link invite import have separate
+instructions. Choose **Hermes-Relay CLI+UI** in the pairing dialog, then paste
+the copied invite in the management UI's **Pair host → Paste invite** form or
+use `hermes-relay pair --pair-qr`. This explicit client choice requests existing
+direct Relay compatibility candidates; it does not publish a listener. Older
+mint responses cannot overwrite a newly selected client or connection mode.
+
+Upstream requires user plugins to be explicitly enabled. A newly installed
+backend needs a Dashboard process restart after activation; a discovery rescan
+alone does not mount its Python routes.
+The optional upstream `plugins.isolation: host` forwarder supports buffered
+HTTP, not plugin WebSockets; Dashboard Relay transport currently requires the
+default `in_process` mode.
+
+**Remote Access → Hermes Secure Link → Set up Secure Link** runs the host's
+read-only preflight, displays blockers and restart impact, and supplies settings
+for the existing Relay owner. **Check again** must confirm the active selected
+origin before **Create pairing QR** is offered. This flow does not persist settings
+or restart services. The Desktop Relay pane and `hermes relay secure-link` use the
+same backend report; Android imports the resulting QR and signs in separately.
+
+## Requirements
+
+- Node.js 18+
+- npm 9+
+
+Only one dev dependency: `esbuild`. No React, no tailwind, no shadcn — they all
+come from the dashboard's SDK global at runtime.
+
+## Build
+
+```bash
+cd plugin/dashboard
+npm install
+npm run build
+```
+
+Writes a single IIFE bundle to `dist/index.js`. Expected size: ~20-80 KB
+minified. If the bundle balloons past 200 KB, investigate (likely an unintended
+`import` of a heavy module — remember React/UI primitives must come from the
+SDK global, not be bundled).
+
+To iterate with rebuilds on save:
+
+```bash
+npm run watch
+```
+
+The `build.sh` wrapper is a bash entry point that runs `npm install` if
+`node_modules/` is missing, then `npm run build`. Useful for git hooks.
+
+## Regenerating the committed bundle
+
+After any change under `src/`:
+
+```bash
+npm run build
+git add dist/index.js src/
+git commit -m "feat(dashboard): <what changed>"
+```
+
+CI does not rebuild the bundle. Forgetting this step means the change ships
+source-only and the deployed dashboard keeps serving the old behaviour.
+
+## SDK touch points
+
+All runtime dependencies come from two globals the dashboard shell injects:
+
+| Global | Used for |
+|--------|----------|
+| `window.__HERMES_PLUGIN_SDK__.React` | React namespace (we never bundle React) |
+| `window.__HERMES_PLUGIN_SDK__.hooks` | `useState`, `useEffect`, `useCallback`, `useMemo` |
+| `window.__HERMES_PLUGIN_SDK__.components` | Nous primitives — `Tabs*`, `Dialog*`, `Card*`, `Button`, `Badge`, `ConfirmDialog`, `Input`, `Label`, `Toast` |
+| `window.__HERMES_PLUGIN_SDK__.fetchJSON` | Session-token-authenticated JSON fetch |
+| `window.__HERMES_PLUGINS__.register(name, Component)` | Registration hook |
+
+Every `.jsx` file opens with:
+
+```js
+const SDK = window.__HERMES_PLUGIN_SDK__;
+const { React } = SDK;
+const { useState, useEffect, ... } = SDK.hooks;
+```
+
+so that esbuild's classic JSX transform (`--jsx=transform
+--jsx-factory=React.createElement`) resolves against the runtime React.
+
+## Styling contract
+
+The dashboard host injects this plugin's `dist/style.css` as a plain `<link>`.
+Keep every rule scoped under `.hermes-relay-plugin` and use the host's current
+theme tokens: `--color-card`, `--color-card-foreground`, `--color-foreground`,
+`--color-muted-foreground`, `--color-border`, `--color-ring`,
+`--color-destructive`, `--color-success`, `--color-warning`, `--radius-*`, and
+`--theme-font-*`. Avoid old unprefixed shadcn aliases such as `--card` or
+`--muted`; they are not part of the current dashboard plugin contract. Fixed
+white/black colors are acceptable only for QR canvases and image export surfaces
+where scan/read correctness requires them.
+
+## Backend routes consumed
+
+All proxied by `plugin_api.py` under `/api/plugins/hermes-relay/`:
+
+- `GET /overview` — Hermes-Relay version, uptime, health, and compatibility counters
+- `GET /sessions` — paired device list
+- `GET /bridge-activity?limit=N` — ring buffer of recent bridge commands
+- `GET /media?include_expired=true|false` — MediaRegistry snapshot
+- `POST /pairing` — mint a pairing code and signed QR payload
+- `DELETE /sessions/{token_prefix}` — revoke a paired session
+- `GET /remote-access/status` — Tailscale/public URL status
+- `GET /remote-access/public-url` — read the pinned public relay URL
+- `PUT /remote-access/public-url` — pin or clear the public relay URL
+- `POST /remote-access/probe` — probe candidate relay endpoints
+- `POST /remote-access/tailscale/enable` — enable Tailscale serving
+- `POST /remote-access/tailscale/disable` — disable Tailscale serving
+
+## Pairing clients
+
+Choose **Hermes-Relay CLI+UI** when connecting another computer. The dialog
+shows its usable Relay routes, including protocols and ports, and a **Copy
+invite** action. Import the complete invite through **Pair host → Paste invite**
+in the local UI. The computer uses Relay pairing; it does not need a Hermes
+Dashboard sign-in. Dashboard ingress routes remain available to Android and
+are not presented as CLI connection candidates.
+
+When the host is connected to Tailscale, CLI+UI invites also include the direct
+Relay listener on its tailnet IP, using the configured Relay protocol and port.
+This route does not require Dashboard Serve or Dashboard authentication; traffic
+is encrypted by Tailscale. The default Android invite retains Dashboard ingress.
+
+A public Dashboard origin does not establish a public Relay listener. CLI+UI
+compatibility never derives a public `:8767` route from that origin. A public
+direct Relay candidate requires an explicitly configured Relay path or port;
+its TLS and reachability are checked independently.
+
+Android pairing renders a QR when the signed payload fits. Certificate-bearing
+invites with many routes can exceed QR capacity; the dialog explains that limit
+and retains the complete copyable invite rather than showing a blank canvas.
+Expired invites cannot be copied and provide a **New invite** action. Header and
+footer actions remain visible while long route lists scroll. Copying works on
+HTTP dashboards through the browser's copy fallback; when browser policy blocks
+both clipboard paths, the dialog exposes a selectable invite for manual copying.
+
+## Demo screenshots
+
+A representative set when showcasing the plugin:
+
+- Overview with service status, route summary, and recent Bridge activity
+- Devices with standard Dashboard setup and paired Hermes-Relay clients
+- Pairing dialog with Android QR or CLI+UI invite import and endpoint controls
+- Activity with Bridge command stream and Media tokens diagnostic view
+- Remote Access endpoint setup and probe results
+- Settings with Home Channel, Agent Context, and maintenance categories
+
+## Live refresh cadence
+
+| Tab | Poll interval | Notes |
+|-----|---------------|-------|
+| Overview | 10s | `/overview`, `/sessions`, `/bridge-activity`, and remote-access status load independently |
+| Devices | 10s | `/sessions` |
+| Activity → Bridge activity | 5s | `/bridge-activity` |
+| Activity → Media tokens | 15s | `/media`; TTL countdown ticks every 1s independently |
+| Remote Access | 15s | `/remote-access/status`; endpoint probes run on demand |
+| Settings | 15s | Home Channel and Agent Context refresh independently |
+
+Toggle persists to `localStorage['hermes-relay-autorefresh']` (default: on).
+When off, each tab surfaces a manual "Refresh" button.
+
+## Notes
+
+- Session revocation calls the dashboard backend's
+  `DELETE /sessions/{token_prefix}` proxy route through the host
+  `ConfirmDialog` before sending the destructive request.
+- Every tab handles loading / empty / error states. The error state shows the
+  backend's 502 detail verbatim so "relay unreachable" is debuggable without
+  opening devtools.
