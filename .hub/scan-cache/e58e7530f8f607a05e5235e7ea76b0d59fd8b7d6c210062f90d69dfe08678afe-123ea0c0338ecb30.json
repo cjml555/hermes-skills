@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:e58e7530f8f607a05e5235e7ea76b0d59fd8b7d6c210062f90d69dfe08678afe",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/obra/superpowers-skills/defense-in-depth-validation",
+  "source_url": "https://github.com/obra/superpowers-skills/tree/cdcd624ad3fd8026deb692e565351854569798dd/skills/debugging/defense-in-depth",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:04:16.060821+00:00",
+  "summary": "defense-in-depth: clean scan, no threats detected",
+  "fresh": true
+}

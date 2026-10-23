@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "registry": "https://clawhub.ai",
+  "slug": "android-native-dev",
+  "ownerHandle": "smasherlxd",
+  "installedAt": 1790909667082,
+  "artifact": {
+    "kind": "archive",
+    "sha256": "862c65c86df9b0b21b771bf5da4e1ae8845735ddc36d57a0206ede3a4a7b0c8c",
+    "integrity": "sha256-hixlyG35sLIbdxv12k4a6IRXNd3DbVegIG7eOkp7DIw="
+  },
+  "skillFile": {
+    "path": "SKILL.md",
+    "sha256": "2d57de512a01b437ce47650361c206cf0e7ee7269b369dcb29bcb85f897382a2"
+  },
+  "fileTreeSha256": "sha256:abf3f51cdb3f5ad511d13b0c85cd33e4970948b174b715c658e768c4758d56bc",
+  "installedVersion": "1.0.0"
+}

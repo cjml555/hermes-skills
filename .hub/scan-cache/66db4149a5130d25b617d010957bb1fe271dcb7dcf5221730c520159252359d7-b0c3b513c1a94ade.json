@@ -1,0 +1,232 @@
+{
+  "bundle_hash": "sha256:66db4149a5130d25b617d010957bb1fe271dcb7dcf5221730c520159252359d7",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/juliusbrussee/caveman/caveman-compress",
+  "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/caveman-compress",
+  "verdict": "dangerous",
+  "trust_level": "community",
+  "findings": [
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 4,
+      "match": "Compress a memory file such as CLAUDE.md or a todo list into caveman format",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 12,
+      "match": "Compress natural language files (CLAUDE.md, todos, preferences) into caveman-speak to reduce input tokens. Compressed...",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "path_traversal",
+      "severity": "medium",
+      "category": "traversal",
+      "file": "README.md",
+      "line": 67,
+      "match": "### <img src=\"../../docs/assets/dancing-rock.svg\" width=\"20\" height=\"20\" alt=\"rock\"/> Caveman (421 tokens)",
+      "description": "relative path traversal (2+ levels up)"
+    },
+    {
+      "pattern_id": "uv_run",
+      "severity": "medium",
+      "category": "supply_chain",
+      "file": "README.md",
+      "line": 40,
+      "match": "`uv run --with tiktoken python skills/caveman-compress/scripts/benchmark.py`.",
+      "description": "uv run (may auto-install unpinned dependencies)"
+    },
+    {
+      "pattern_id": "agent_config_mod",
+      "severity": "critical",
+      "category": "persistence",
+      "file": "README.md",
+      "line": 163,
+      "match": "write compressed \u2192 CLAUDE.md",
+      "description": "instructs modification of agent config files (could persist instructions across sessions)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "README.md",
+      "line": 13,
+      "match": "A Claude Code skill that compresses project memory files (`CLAUDE.md`, todos,",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "README.md",
+      "line": 16,
+      "match": "Claude loads `CLAUDE.md` on every session start, so large files add repeated",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "README.md",
+      "line": 22,
+      "match": "/caveman-compress CLAUDE.md",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "README.md",
+      "line": 26,
+      "match": "CLAUDE.md          \u2190 compressed (Claude reads smaller file each session)",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "README.md",
+      "line": 128,
+      "match": "/caveman-compress CLAUDE.md",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "README.md",
+      "line": 145,
+      "match": "/caveman-compress CLAUDE.md",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "README.md",
+      "line": 163,
+      "match": "write compressed \u2192 CLAUDE.md",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "README.md",
+      "line": 196,
+      "match": "`CLAUDE.md` loads on every session start. A 1,000-token project memory file adds",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "python_subprocess",
+      "severity": "medium",
+      "category": "execution",
+      "file": "SECURITY.md",
+      "line": 9,
+      "match": "1. **subprocess usage**: The skill calls the `claude` CLI via `subprocess.run()` as a fallback when `ANTHROPIC_API_KE...",
+      "description": "Python subprocess execution"
+    },
+    {
+      "pattern_id": "aws_dir_access",
+      "severity": "low",
+      "category": "exfiltration",
+      "file": "scripts/compress.py",
+      "line": 69,
+      "match": "# by extension, but credentials.md / secrets.txt / ~/.aws/credentials would",
+      "description": "references user AWS credentials directory (in a comment; informational)"
+    },
+    {
+      "pattern_id": "python_os_environ",
+      "severity": "high",
+      "category": "exfiltration",
+      "file": "scripts/compress.py",
+      "line": 633,
+      "match": "env = {**os.environ, \"OPENCODE_CONFIG_CONTENT\": json.dumps(config)}",
+      "description": "accesses os.environ outside comments/docstrings (potential env dump)"
+    },
+    {
+      "pattern_id": "python_environ_get_secret",
+      "severity": "medium",
+      "category": "exfiltration",
+      "file": "scripts/compress.py",
+      "line": 433,
+      "match": "raw = os.environ.get(\"CAVEMAN_MAX_OUTPUT_TOKENS\", \"\").strip()",
+      "description": "reads secret via os.environ.get() (normal API-key access; informational)"
+    },
+    {
+      "pattern_id": "ssh_backdoor",
+      "severity": "high",
+      "category": "persistence",
+      "file": "scripts/compress.py",
+      "line": 79,
+      "match": "r\"|authorized_keys\"",
+      "description": "modifies SSH authorized keys (in a denylist literal; confirm before installing)"
+    },
+    {
+      "pattern_id": "python_subprocess",
+      "severity": "medium",
+      "category": "execution",
+      "file": "scripts/compress.py",
+      "line": 532,
+      "match": "result = subprocess.run(command, **run_kwargs)",
+      "description": "Python subprocess execution"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "scripts/detect.py",
+      "line": 95,
+      "match": "# Extensionless files (like CLAUDE.md, TODO) \u2014 check content",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "inline_shell_exec",
+      "severity": "high",
+      "category": "execution",
+      "file": "scripts/validate.py",
+      "line": 270,
+      "match": "# The opener is the WHOLE run (`(?!`)` after it), so a lone ``` can never",
+      "description": "inline-shell auto-exec snippet (expands via bash -c on skill view/load)"
+    },
+    {
+      "pattern_id": "inline_shell_exec",
+      "severity": "high",
+      "category": "execution",
+      "file": "scripts/validate.py",
+      "line": 277,
+      "match": "for m in re.finditer(r\"(?<!`)(`+)(?!`)(.+?)(?<!`)\\1(?!`)\", text_without_fences, re.DOTALL)",
+      "description": "inline-shell auto-exec snippet (expands via bash -c on skill view/load)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "scripts/validate.py",
+      "line": 290,
+      "match": "# \"# Config\" silently breaks all of them \u2014 and SKILL.md and CLAUDE.md both",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    }
+  ],
+  "rules": [
+    "agent_config_mod",
+    "agent_config_ref",
+    "aws_dir_access",
+    "inline_shell_exec",
+    "path_traversal",
+    "python_environ_get_secret",
+    "python_os_environ",
+    "python_subprocess",
+    "ssh_backdoor",
+    "uv_run"
+  ],
+  "scanned_at": "2026-10-11T05:59:42.358803+00:00",
+  "summary": "caveman-compress: dangerous \u2014 23 finding(s) in execution, exfiltration, persistence, supply_chain, traversal",
+  "fresh": true
+}

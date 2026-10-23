@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:dab0591f206d05034552973fdc6369f5ca38f8f036579e4bcdf429c12655cddc",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/product-on-purpose/pm-skills/deliver-acceptance-criteria",
+  "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/deliver-acceptance-criteria",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:07:58.700692+00:00",
+  "summary": "deliver-acceptance-criteria: clean scan, no threats detected",
+  "fresh": true
+}

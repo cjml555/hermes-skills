@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "registry": "https://clawhub.ai",
+  "slug": "find-skills",
+  "requestedReference": "skills-sh:vercel-labs/skills/find-skills",
+  "trustState": "not-scanned-by-clawhub",
+  "installedAt": 1790909114753,
+  "sourceUrl": "https://github.com/vercel-labs/skills/tree/3694740352eeef5cdd689af694c485f1ff62eec3/skills/find-skills",
+  "artifact": {
+    "kind": "archive",
+    "sha256": "d0401c6137f12796d05ad903a09b571cf849c277ca302a095b6d9753f8ffa880",
+    "integrity": "sha256-0EAcYTfxJ5bQWtkDoJtXHPhJwnfKMCoJW22XU/j/qIA="
+  },
+  "skillFile": {
+    "path": "SKILL.md",
+    "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+  },
+  "fileTreeSha256": "sha256:018b89a7333adf0a65ec843fb84b539438a381910f00410381ffa264d5378ceb",
+  "installedVersion": "3694740352eeef5cdd689af694c485f1ff62eec3"
+}

@@ -1,0 +1,35 @@
+{
+  "bundle_hash": "sha256:d7dea4e06514e1d7c4d0b5488304d27daa14af1e325a25c71e5501a0f66e24c8",
+  "scanner_version": "skills-guard-v7",
+  "source": "@ivangdavila/android",
+  "source_url": "@ivangdavila/android",
+  "verdict": "caution",
+  "trust_level": "community",
+  "findings": [
+    {
+      "pattern_id": "encoded_exfil",
+      "severity": "high",
+      "category": "exfiltration",
+      "file": "ci.md",
+      "line": 43,
+      "match": "- In this skill's memory files, all four are pointers: `env:ANDROID_KEYSTORE_BASE64`, `env:ANDROID_KEYSTORE_PASSWORD`...",
+      "description": "base64 encoding combined with environment access"
+    },
+    {
+      "pattern_id": "backtick_subshell",
+      "severity": "medium",
+      "category": "execution",
+      "file": "debug.md",
+      "line": 11,
+      "match": "1. **`adb logcat --pid=$(adb shell pidof -s <package>)`** \u2014 everything your app logged, and nothing else. Tag filters...",
+      "description": "backtick string with command substitution"
+    }
+  ],
+  "rules": [
+    "backtick_subshell",
+    "encoded_exfil"
+  ],
+  "scanned_at": "2026-10-03T03:22:45.153384+00:00",
+  "summary": "android: caution \u2014 2 finding(s) in execution, exfiltration",
+  "fresh": true
+}

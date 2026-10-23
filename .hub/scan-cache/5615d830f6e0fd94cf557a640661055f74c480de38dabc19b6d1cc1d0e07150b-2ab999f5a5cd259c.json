@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:5615d830f6e0fd94cf557a640661055f74c480de38dabc19b6d1cc1d0e07150b",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/obra/superpowers/executing-plans",
+  "source_url": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/executing-plans",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:02:57.738069+00:00",
+  "summary": "executing-plans: clean scan, no threats detected",
+  "fresh": true
+}

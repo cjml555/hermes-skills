@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:aa962e4f25ab8dc3e4d9e0370d0d92e57d97ef25429cf24943c27cbb87a51280",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/phuryn/pm-skills/competitor-analysis",
+  "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-market-research/skills/competitor-analysis",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:09:50.888988+00:00",
+  "summary": "competitor-analysis: clean scan, no threats detected",
+  "fresh": true
+}

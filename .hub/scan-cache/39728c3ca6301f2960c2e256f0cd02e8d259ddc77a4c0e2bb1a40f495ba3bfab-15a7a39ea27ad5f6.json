@@ -1,0 +1,43 @@
+{
+  "bundle_hash": "sha256:39728c3ca6301f2960c2e256f0cd02e8d259ddc77a4c0e2bb1a40f495ba3bfab",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/product-on-purpose/pm-skills/utility-pm-skill-validate",
+  "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/utility-pm-skill-validate",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 82,
+      "match": "- The AGENTS.md entry for this skill",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 105,
+      "match": "| `agents-entry` | AGENTS.md has an entry for this skill | Entry exists with matching `**Path:**` |",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "references/EXAMPLE.md",
+      "line": 30,
+      "match": "- PASS | structural | agents-entry | AGENTS.md entry found with matching path",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    }
+  ],
+  "rules": [
+    "agent_config_ref"
+  ],
+  "scanned_at": "2026-10-11T06:07:35.590234+00:00",
+  "summary": "utility-pm-skill-validate: safe \u2014 3 finding(s) in persistence",
+  "fresh": true
+}

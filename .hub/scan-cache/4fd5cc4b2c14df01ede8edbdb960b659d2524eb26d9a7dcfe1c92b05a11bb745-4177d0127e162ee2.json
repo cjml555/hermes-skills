@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:4fd5cc4b2c14df01ede8edbdb960b659d2524eb26d9a7dcfe1c92b05a11bb745",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/phuryn/pm-skills/strategy-red-team",
+  "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/strategy-red-team",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:09:45.373393+00:00",
+  "summary": "strategy-red-team: clean scan, no threats detected",
+  "fresh": true
+}

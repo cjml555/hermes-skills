@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:6ea492f60e13db1623d382b24644d12ea3257d6f093bd552f0207154967950dc",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/product-on-purpose/pm-skills/deliver-edge-cases",
+  "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/deliver-edge-cases",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:08:26.405422+00:00",
+  "summary": "deliver-edge-cases: clean scan, no threats detected",
+  "fresh": true
+}

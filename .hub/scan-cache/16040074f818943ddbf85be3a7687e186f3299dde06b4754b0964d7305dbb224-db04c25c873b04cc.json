@@ -1,0 +1,25 @@
+{
+  "bundle_hash": "sha256:16040074f818943ddbf85be3a7687e186f3299dde06b4754b0964d7305dbb224",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/obra/superpowers/diagnosing-superpowers",
+  "source_url": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/diagnosing-superpowers",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "prompts/request-conflicts.md",
+      "line": 13,
+      "match": "the session (CLAUDE.md, AGENTS.md, GEMINI.md, or the harness's",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    }
+  ],
+  "rules": [
+    "agent_config_ref"
+  ],
+  "scanned_at": "2026-10-11T06:02:44.749819+00:00",
+  "summary": "diagnosing-superpowers: safe \u2014 1 finding(s) in persistence",
+  "fresh": true
+}

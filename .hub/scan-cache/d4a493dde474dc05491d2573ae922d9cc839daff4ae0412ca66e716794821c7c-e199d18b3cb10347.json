@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:d4a493dde474dc05491d2573ae922d9cc839daff4ae0412ca66e716794821c7c",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/alirezarezvani/claude-skills/pm-skills",
+  "source_url": "https://github.com/alirezarezvani/claude-skills/tree/19392f7a08264ed00486a251f5b2098321771f94/project-management/skills/pm-skills",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:05:03.238366+00:00",
+  "summary": "pm-skills: clean scan, no threats detected",
+  "fresh": true
+}

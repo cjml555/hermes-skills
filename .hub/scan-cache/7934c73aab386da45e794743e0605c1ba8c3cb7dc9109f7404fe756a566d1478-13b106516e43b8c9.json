@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:7934c73aab386da45e794743e0605c1ba8c3cb7dc9109f7404fe756a566d1478",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/phuryn/pm-skills/create-prd",
+  "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/create-prd",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:08:57.284662+00:00",
+  "summary": "create-prd: clean scan, no threats detected",
+  "fresh": true
+}

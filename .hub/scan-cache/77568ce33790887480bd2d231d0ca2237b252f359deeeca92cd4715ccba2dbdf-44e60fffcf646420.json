@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:77568ce33790887480bd2d231d0ca2237b252f359deeeca92cd4715ccba2dbdf",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/juliusbrussee/caveman/caveman-explore",
+  "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/caveman-explore",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:00:11.237739+00:00",
+  "summary": "caveman-explore: clean scan, no threats detected",
+  "fresh": true
+}

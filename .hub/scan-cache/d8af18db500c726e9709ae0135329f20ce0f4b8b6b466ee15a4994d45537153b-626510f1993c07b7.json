@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:d8af18db500c726e9709ae0135329f20ce0f4b8b6b466ee15a4994d45537153b",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/obra/superpowers-skills/condition-based-waiting",
+  "source_url": "https://github.com/obra/superpowers-skills/tree/cdcd624ad3fd8026deb692e565351854569798dd/skills/testing/condition-based-waiting",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:04:10.495531+00:00",
+  "summary": "condition-based-waiting: clean scan, no threats detected",
+  "fresh": true
+}

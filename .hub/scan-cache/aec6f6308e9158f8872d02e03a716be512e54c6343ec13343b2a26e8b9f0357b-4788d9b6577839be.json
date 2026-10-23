@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:aec6f6308e9158f8872d02e03a716be512e54c6343ec13343b2a26e8b9f0357b",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/product-on-purpose/pm-skills/utility-pm-skill-iterate",
+  "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/utility-pm-skill-iterate",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:07:42.438070+00:00",
+  "summary": "utility-pm-skill-iterate: clean scan, no threats detected",
+  "fresh": true
+}

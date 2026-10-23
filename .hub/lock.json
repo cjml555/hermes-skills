@@ -1,0 +1,1166 @@
+{
+  "version": 1,
+  "installed": {
+    "caveman": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/juliusbrussee/caveman/caveman-es",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:8b3754bc149b9962",
+      "install_path": "caveman",
+      "files": [
+        "SKILL.md",
+        "README.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/caveman",
+        "source_revision": "2e08b9177c07bb7249a8a2d1a6758e5db281d002"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:8b3754bc149b996200ad076338a59cf621b367384a61ca14e84e43e2416f33c2",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/juliusbrussee/caveman/caveman-es",
+        "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/caveman",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:01:38.914693+00:00",
+        "summary": "caveman: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:01:38.925317+00:00",
+      "updated_at": "2026-10-11T06:01:38.925317+00:00"
+    },
+    "cavecrew": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/juliusbrussee/caveman/cavecrew",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:f42181e23bb3fb47",
+      "install_path": "cavecrew",
+      "files": [
+        "SKILL.md",
+        "README.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/cavecrew",
+        "source_revision": "2e08b9177c07bb7249a8a2d1a6758e5db281d002"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:f42181e23bb3fb4716f0dd0cdc270139fb7a218e7c3d878f8709f5054e978eb8",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/juliusbrussee/caveman/cavecrew",
+        "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/cavecrew",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T05:59:19.223363+00:00",
+        "summary": "cavecrew: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T05:59:19.231465+00:00",
+      "updated_at": "2026-10-11T05:59:19.231465+00:00"
+    },
+    "caveman-commit": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/juliusbrussee/caveman/caveman-commit",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:d0f73b5e2d4a918c",
+      "install_path": "caveman-commit",
+      "files": [
+        "SKILL.md",
+        "README.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/caveman-commit",
+        "source_revision": "2e08b9177c07bb7249a8a2d1a6758e5db281d002"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:d0f73b5e2d4a918c5f9284e4a1a1a24c6193f6b321ed29faa4cab73d1872fdfd",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/juliusbrussee/caveman/caveman-commit",
+        "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/caveman-commit",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T05:59:34.546314+00:00",
+        "summary": "caveman-commit: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T05:59:34.562660+00:00",
+      "updated_at": "2026-10-11T05:59:34.562660+00:00"
+    },
+    "caveman-evidence-review": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/juliusbrussee/caveman/caveman-evidence-review",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:542e40f3e5b10b57",
+      "install_path": "caveman-evidence-review",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/caveman-evidence-review",
+        "source_revision": "2e08b9177c07bb7249a8a2d1a6758e5db281d002"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:542e40f3e5b10b577572aabac7baf03f85a8267f3a7ab5af033c34eb3df1858b",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/juliusbrussee/caveman/caveman-evidence-review",
+        "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/caveman-evidence-review",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:00:05.389395+00:00",
+        "summary": "caveman-evidence-review: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:00:05.413537+00:00",
+      "updated_at": "2026-10-11T06:00:05.413537+00:00"
+    },
+    "caveman-explore": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/juliusbrussee/caveman/caveman-explore",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:77568ce337908874",
+      "install_path": "caveman-explore",
+      "files": [
+        "SKILL.md",
+        "package.json",
+        "tests/skill-file.test.mjs"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/caveman-explore",
+        "source_revision": "2e08b9177c07bb7249a8a2d1a6758e5db281d002"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:77568ce33790887480bd2d231d0ca2237b252f359deeeca92cd4715ccba2dbdf",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/juliusbrussee/caveman/caveman-explore",
+        "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/caveman-explore",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:00:11.237739+00:00",
+        "summary": "caveman-explore: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:00:11.254556+00:00",
+      "updated_at": "2026-10-11T06:00:11.254556+00:00"
+    },
+    "caveman-help": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/juliusbrussee/caveman/caveman-help",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:10570bb77272402b",
+      "install_path": "caveman-help",
+      "files": [
+        "SKILL.md",
+        "README.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/caveman-help",
+        "source_revision": "2e08b9177c07bb7249a8a2d1a6758e5db281d002"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:10570bb77272402be07f4e608020bffe092ced8be2c49a8ea5f3a9754f082487",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/juliusbrussee/caveman/caveman-help",
+        "source_url": "https://github.com/juliusbrussee/caveman/tree/2e08b9177c07bb7249a8a2d1a6758e5db281d002/skills/caveman-help",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:00:17.303400+00:00",
+        "summary": "caveman-help: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:00:17.317648+00:00",
+      "updated_at": "2026-10-11T06:00:17.317648+00:00"
+    },
+    "brainstorming": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/obra/superpowers/brainstorming",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:f1df957b80681c37",
+      "install_path": "brainstorming",
+      "files": [
+        "SKILL.md",
+        "builder-check-prompt.md",
+        "scripts/frame-template.html",
+        "scripts/helper.js",
+        "scripts/server.cjs",
+        "scripts/start-server.sh",
+        "scripts/stop-server.sh",
+        "visual-companion.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/brainstorming",
+        "source_revision": "bb92a77741419a4ab5f06e711a283343f1ada0c3"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:f1df957b80681c370d6651ff2d283c55b3d8d92f5046480b7959a0c3347b1937",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/obra/superpowers/brainstorming",
+        "source_url": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/brainstorming",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:02:35.878065+00:00",
+        "summary": "brainstorming: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:02:35.886013+00:00",
+      "updated_at": "2026-10-11T06:02:35.886013+00:00"
+    },
+    "diagnosing-superpowers": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/obra/superpowers/diagnosing-superpowers",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:16040074f818943d",
+      "install_path": "diagnosing-superpowers",
+      "files": [
+        "SKILL.md",
+        "prompts/analyst-common.md",
+        "prompts/cost-and-time.md",
+        "prompts/plan-adherence.md",
+        "prompts/quality-evidence.md",
+        "prompts/repeated-work.md",
+        "prompts/request-conflicts.md",
+        "prompts/scrub-audit.md",
+        "prompts/scrub.md",
+        "prompts/similar-session.md",
+        "prompts/skill-timeline.md",
+        "prompts/stumbles.md",
+        "references/context-safety.md",
+        "references/github-issues.md",
+        "references/redaction-policy.md",
+        "references/session-discovery.md",
+        "templates/bundle-README.md",
+        "templates/case.md",
+        "templates/issue.md",
+        "templates/report.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/diagnosing-superpowers",
+        "source_revision": "bb92a77741419a4ab5f06e711a283343f1ada0c3"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:16040074f818943ddbf85be3a7687e186f3299dde06b4754b0964d7305dbb224",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/obra/superpowers/diagnosing-superpowers",
+        "source_url": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/diagnosing-superpowers",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [
+          {
+            "pattern_id": "agent_config_ref",
+            "severity": "low",
+            "category": "persistence",
+            "file": "prompts/request-conflicts.md",
+            "line": 13,
+            "match": "the session (CLAUDE.md, AGENTS.md, GEMINI.md, or the harness's",
+            "description": "references agent config files (informational; only modification intent is scored)"
+          }
+        ],
+        "rules": [
+          "agent_config_ref"
+        ],
+        "scanned_at": "2026-10-11T06:02:44.749819+00:00",
+        "summary": "diagnosing-superpowers: safe — 1 finding(s) in persistence",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:02:44.761080+00:00",
+      "updated_at": "2026-10-11T06:02:44.761080+00:00"
+    },
+    "dispatching-parallel-agents": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/obra/superpowers/dispatching-parallel-agents",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:2e5f18b30479092e",
+      "install_path": "dispatching-parallel-agents",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/dispatching-parallel-agents",
+        "source_revision": "bb92a77741419a4ab5f06e711a283343f1ada0c3"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:2e5f18b30479092e903a4b107355d3ddcd28540f687e7e58307002c23bbfded4",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/obra/superpowers/dispatching-parallel-agents",
+        "source_url": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/dispatching-parallel-agents",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:02:50.960378+00:00",
+        "summary": "dispatching-parallel-agents: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:02:50.970186+00:00",
+      "updated_at": "2026-10-11T06:02:50.970186+00:00"
+    },
+    "executing-plans": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/obra/superpowers/executing-plans",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:5615d830f6e0fd94",
+      "install_path": "executing-plans",
+      "files": [
+        "SKILL.md",
+        "scripts/task-done",
+        "scripts/task-start"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/executing-plans",
+        "source_revision": "bb92a77741419a4ab5f06e711a283343f1ada0c3"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:5615d830f6e0fd94cf557a640661055f74c480de38dabc19b6d1cc1d0e07150b",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/obra/superpowers/executing-plans",
+        "source_url": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/executing-plans",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:02:57.738069+00:00",
+        "summary": "executing-plans: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:02:57.745265+00:00",
+      "updated_at": "2026-10-11T06:02:57.745265+00:00"
+    },
+    "collision-zone-thinking": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/obra/superpowers-skills/collision-zone-thinking",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:efdf1982a56c002b",
+      "install_path": "collision-zone-thinking",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/obra/superpowers-skills/tree/cdcd624ad3fd8026deb692e565351854569798dd/skills/problem-solving/collision-zone-thinking",
+        "source_revision": "cdcd624ad3fd8026deb692e565351854569798dd"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:efdf1982a56c002b0c4dba2c6dcad56afba718516010a29d7270cf090c794586",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/obra/superpowers-skills/collision-zone-thinking",
+        "source_url": "https://github.com/obra/superpowers-skills/tree/cdcd624ad3fd8026deb692e565351854569798dd/skills/problem-solving/collision-zone-thinking",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:04:04.269663+00:00",
+        "summary": "collision-zone-thinking: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:04:04.279496+00:00",
+      "updated_at": "2026-10-11T06:04:04.279496+00:00"
+    },
+    "condition-based-waiting": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/obra/superpowers-skills/condition-based-waiting",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:d8af18db500c726e",
+      "install_path": "condition-based-waiting",
+      "files": [
+        "SKILL.md",
+        "example.ts"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/obra/superpowers-skills/tree/cdcd624ad3fd8026deb692e565351854569798dd/skills/testing/condition-based-waiting",
+        "source_revision": "cdcd624ad3fd8026deb692e565351854569798dd"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:d8af18db500c726e9709ae0135329f20ce0f4b8b6b466ee15a4994d45537153b",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/obra/superpowers-skills/condition-based-waiting",
+        "source_url": "https://github.com/obra/superpowers-skills/tree/cdcd624ad3fd8026deb692e565351854569798dd/skills/testing/condition-based-waiting",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:04:10.495531+00:00",
+        "summary": "condition-based-waiting: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:04:10.507744+00:00",
+      "updated_at": "2026-10-11T06:04:10.507744+00:00"
+    },
+    "defense-in-depth": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/obra/superpowers-skills/defense-in-depth-validation",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:e58e7530f8f607a0",
+      "install_path": "defense-in-depth",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/obra/superpowers-skills/tree/cdcd624ad3fd8026deb692e565351854569798dd/skills/debugging/defense-in-depth",
+        "source_revision": "cdcd624ad3fd8026deb692e565351854569798dd"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:e58e7530f8f607a05e5235e7ea76b0d59fd8b7d6c210062f90d69dfe08678afe",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/obra/superpowers-skills/defense-in-depth-validation",
+        "source_url": "https://github.com/obra/superpowers-skills/tree/cdcd624ad3fd8026deb692e565351854569798dd/skills/debugging/defense-in-depth",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:04:16.060821+00:00",
+        "summary": "defense-in-depth: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:04:16.079063+00:00",
+      "updated_at": "2026-10-11T06:04:16.079063+00:00"
+    },
+    "pm-skills": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/alirezarezvani/claude-skills/pm-skills",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:d4a493dde474dc05",
+      "install_path": "pm-skills",
+      "files": [
+        "SKILL.md",
+        "assets/expected_flow_metrics.json",
+        "assets/sample_jira_snapshot.json",
+        "references/agentic_delivery_governance.md",
+        "references/flow_forecasting_canon.md",
+        "references/pm_loop_playbook.md",
+        "scripts/delivery_loop_gate.py",
+        "scripts/jira_snapshot_bridge.py",
+        "scripts/pm_goal_router.py"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/alirezarezvani/claude-skills/tree/19392f7a08264ed00486a251f5b2098321771f94/project-management/skills/pm-skills",
+        "source_revision": "19392f7a08264ed00486a251f5b2098321771f94"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:d4a493dde474dc05491d2573ae922d9cc839daff4ae0412ca66e716794821c7c",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/alirezarezvani/claude-skills/pm-skills",
+        "source_url": "https://github.com/alirezarezvani/claude-skills/tree/19392f7a08264ed00486a251f5b2098321771f94/project-management/skills/pm-skills",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:05:03.238366+00:00",
+        "summary": "pm-skills: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:05:03.248228+00:00",
+      "updated_at": "2026-10-11T06:05:03.248228+00:00"
+    },
+    "utility-update-pm-skills": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/product-on-purpose/pm-skills/utility-update-pm-skills",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:1f403d52591e864d",
+      "install_path": "utility-update-pm-skills",
+      "files": [
+        "SKILL.md",
+        "HISTORY.md",
+        "evals/trigger-fixtures.json",
+        "references/EXAMPLE.md",
+        "references/TEMPLATE.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/utility-update-pm-skills",
+        "source_revision": "1cef1a9eae10017389863d51e289e0ae41e17fcb"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:1f403d52591e864d3e858aeb6a61be70682c4eab7ad06f49f5c11b16527cd29e",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/product-on-purpose/pm-skills/utility-update-pm-skills",
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/utility-update-pm-skills",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [
+          {
+            "pattern_id": "agent_config_ref",
+            "severity": "low",
+            "category": "persistence",
+            "file": "SKILL.md",
+            "line": 180,
+            "match": "`commands/`, `AGENTS.md`, and `.claude-plugin/plugin.json`. If",
+            "description": "references agent config files (informational; only modification intent is scored)"
+          },
+          {
+            "pattern_id": "agent_config_ref",
+            "severity": "low",
+            "category": "persistence",
+            "file": "SKILL.md",
+            "line": 202,
+            "match": "- File integrity: `AGENTS.md`, `skills/`, `commands/`, `_workflows/`",
+            "description": "references agent config files (informational; only modification intent is scored)"
+          },
+          {
+            "pattern_id": "agent_config_ref",
+            "severity": "low",
+            "category": "persistence",
+            "file": "SKILL.md",
+            "line": 264,
+            "match": "| `AGENTS.md` | Skill discovery for IDEs |",
+            "description": "references agent config files (informational; only modification intent is scored)"
+          },
+          {
+            "pattern_id": "agent_config_ref",
+            "severity": "low",
+            "category": "persistence",
+            "file": "SKILL.md",
+            "line": 314,
+            "match": "- [ ] File integrity: AGENTS.md, skills/, commands/, _workflows/ exist",
+            "description": "references agent config files (informational; only modification intent is scored)"
+          },
+          {
+            "pattern_id": "agent_config_ref",
+            "severity": "low",
+            "category": "persistence",
+            "file": "references/EXAMPLE.md",
+            "line": 88,
+            "match": "| File integrity | PASS -- AGENTS.md, skills/, commands/, _workflows/ all present |",
+            "description": "references agent config files (informational; only modification intent is scored)"
+          }
+        ],
+        "rules": [
+          "agent_config_ref"
+        ],
+        "scanned_at": "2026-10-11T06:05:33.603875+00:00",
+        "summary": "utility-update-pm-skills: safe — 5 finding(s) in persistence",
+        "fresh": false
+      },
+      "installed_at": "2026-10-11T06:07:13.722884+00:00",
+      "updated_at": "2026-10-11T06:07:13.722884+00:00"
+    },
+    "utility-pm-skill-validate": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/product-on-purpose/pm-skills/utility-pm-skill-validate",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:39728c3ca6301f29",
+      "install_path": "utility-pm-skill-validate",
+      "files": [
+        "SKILL.md",
+        "HISTORY.md",
+        "evals/trigger-fixtures.json",
+        "references/EXAMPLE.md",
+        "references/TEMPLATE.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/utility-pm-skill-validate",
+        "source_revision": "1cef1a9eae10017389863d51e289e0ae41e17fcb"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:39728c3ca6301f2960c2e256f0cd02e8d259ddc77a4c0e2bb1a40f495ba3bfab",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/product-on-purpose/pm-skills/utility-pm-skill-validate",
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/utility-pm-skill-validate",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [
+          {
+            "pattern_id": "agent_config_ref",
+            "severity": "low",
+            "category": "persistence",
+            "file": "SKILL.md",
+            "line": 82,
+            "match": "- The AGENTS.md entry for this skill",
+            "description": "references agent config files (informational; only modification intent is scored)"
+          },
+          {
+            "pattern_id": "agent_config_ref",
+            "severity": "low",
+            "category": "persistence",
+            "file": "SKILL.md",
+            "line": 105,
+            "match": "| `agents-entry` | AGENTS.md has an entry for this skill | Entry exists with matching `**Path:**` |",
+            "description": "references agent config files (informational; only modification intent is scored)"
+          },
+          {
+            "pattern_id": "agent_config_ref",
+            "severity": "low",
+            "category": "persistence",
+            "file": "references/EXAMPLE.md",
+            "line": 30,
+            "match": "- PASS | structural | agents-entry | AGENTS.md entry found with matching path",
+            "description": "references agent config files (informational; only modification intent is scored)"
+          }
+        ],
+        "rules": [
+          "agent_config_ref"
+        ],
+        "scanned_at": "2026-10-11T06:07:35.590234+00:00",
+        "summary": "utility-pm-skill-validate: safe — 3 finding(s) in persistence",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:07:35.600438+00:00",
+      "updated_at": "2026-10-11T06:07:35.600438+00:00"
+    },
+    "utility-pm-skill-iterate": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/product-on-purpose/pm-skills/utility-pm-skill-iterate",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:aec6f6308e9158f8",
+      "install_path": "utility-pm-skill-iterate",
+      "files": [
+        "SKILL.md",
+        "evals/trigger-fixtures.json",
+        "references/EXAMPLE.md",
+        "references/TEMPLATE.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/utility-pm-skill-iterate",
+        "source_revision": "1cef1a9eae10017389863d51e289e0ae41e17fcb"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:aec6f6308e9158f8872d02e03a716be512e54c6343ec13343b2a26e8b9f0357b",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/product-on-purpose/pm-skills/utility-pm-skill-iterate",
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/utility-pm-skill-iterate",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:07:42.438070+00:00",
+        "summary": "utility-pm-skill-iterate: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:07:42.444514+00:00",
+      "updated_at": "2026-10-11T06:07:42.444514+00:00"
+    },
+    "utility-pm-critic": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/product-on-purpose/pm-skills/utility-pm-critic",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:7fde81b5e4dc19ae",
+      "install_path": "utility-pm-critic",
+      "files": [
+        "SKILL.md",
+        "HISTORY.md",
+        "evals/trigger-fixtures.json",
+        "references/EXAMPLE.md",
+        "references/TEMPLATE.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/utility-pm-critic",
+        "source_revision": "1cef1a9eae10017389863d51e289e0ae41e17fcb"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:7fde81b5e4dc19ae407f1b93c044701e53154d7f73dacccf0d42f0978ab315c4",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/product-on-purpose/pm-skills/utility-pm-critic",
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/utility-pm-critic",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:07:49.292987+00:00",
+        "summary": "utility-pm-critic: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:07:49.304781+00:00",
+      "updated_at": "2026-10-11T06:07:49.304781+00:00"
+    },
+    "deliver-acceptance-criteria": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/product-on-purpose/pm-skills/deliver-acceptance-criteria",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:dab0591f206d0503",
+      "install_path": "deliver-acceptance-criteria",
+      "files": [
+        "SKILL.md",
+        "HISTORY.md",
+        "evals/output-scenarios/bulk-invite.md",
+        "evals/trigger-fixtures.json",
+        "references/EXAMPLE.md",
+        "references/TEMPLATE.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/deliver-acceptance-criteria",
+        "source_revision": "1cef1a9eae10017389863d51e289e0ae41e17fcb"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:dab0591f206d05034552973fdc6369f5ca38f8f036579e4bcdf429c12655cddc",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/product-on-purpose/pm-skills/deliver-acceptance-criteria",
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/deliver-acceptance-criteria",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:07:58.700692+00:00",
+        "summary": "deliver-acceptance-criteria: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:07:58.710650+00:00",
+      "updated_at": "2026-10-11T06:07:58.710650+00:00"
+    },
+    "deliver-prd": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/product-on-purpose/pm-skills/deliver-prd",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:8e6190891c29978a",
+      "install_path": "deliver-prd",
+      "files": [
+        "SKILL.md",
+        "HISTORY.md",
+        "evals/trigger-fixtures.json",
+        "references/EXAMPLE.md",
+        "references/TEMPLATE.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/deliver-prd",
+        "source_revision": "1cef1a9eae10017389863d51e289e0ae41e17fcb"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:8e6190891c29978a2c7bfb1911ad15c84e6fbf896a5a0dbaa1a60f10a2ee7606",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/product-on-purpose/pm-skills/deliver-prd",
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/deliver-prd",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:08:06.764660+00:00",
+        "summary": "deliver-prd: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:08:06.770806+00:00",
+      "updated_at": "2026-10-11T06:08:06.770806+00:00"
+    },
+    "deliver-user-stories": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/product-on-purpose/pm-skills/deliver-user-stories",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:238c4c28195ae27a",
+      "install_path": "deliver-user-stories",
+      "files": [
+        "SKILL.md",
+        "HISTORY.md",
+        "evals/trigger-fixtures.json",
+        "references/EXAMPLE.md",
+        "references/TEMPLATE.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/deliver-user-stories",
+        "source_revision": "1cef1a9eae10017389863d51e289e0ae41e17fcb"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:238c4c28195ae27aa08400de7749511bd302881380e2dc8fdb01c13d42264c57",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/product-on-purpose/pm-skills/deliver-user-stories",
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/deliver-user-stories",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:08:16.105122+00:00",
+        "summary": "deliver-user-stories: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:08:16.113495+00:00",
+      "updated_at": "2026-10-11T06:08:16.113495+00:00"
+    },
+    "deliver-edge-cases": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/product-on-purpose/pm-skills/deliver-edge-cases",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:6ea492f60e13db16",
+      "install_path": "deliver-edge-cases",
+      "files": [
+        "SKILL.md",
+        "HISTORY.md",
+        "evals/output-scenarios/file-upload.md",
+        "evals/trigger-fixtures.json",
+        "references/EXAMPLE.md",
+        "references/TEMPLATE.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/deliver-edge-cases",
+        "source_revision": "1cef1a9eae10017389863d51e289e0ae41e17fcb"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:6ea492f60e13db1623d382b24644d12ea3257d6f093bd552f0207154967950dc",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/product-on-purpose/pm-skills/deliver-edge-cases",
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/deliver-edge-cases",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:08:26.405422+00:00",
+        "summary": "deliver-edge-cases: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:08:26.411677+00:00",
+      "updated_at": "2026-10-11T06:08:26.411677+00:00"
+    },
+    "discover-competitive-analysis": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/product-on-purpose/pm-skills/discover-competitive-analysis",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:59cbb1edbf207cc5",
+      "install_path": "discover-competitive-analysis",
+      "files": [
+        "SKILL.md",
+        "HISTORY.md",
+        "evals/output-scenarios/notetaking-market.md",
+        "evals/trigger-fixtures.json",
+        "references/EXAMPLE.md",
+        "references/TEMPLATE.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/discover-competitive-analysis",
+        "source_revision": "1cef1a9eae10017389863d51e289e0ae41e17fcb"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:59cbb1edbf207cc5f1704f8d383176671fcec28eae420589cfbee1bdbc3e9367",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/product-on-purpose/pm-skills/discover-competitive-analysis",
+        "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/discover-competitive-analysis",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:08:36.567009+00:00",
+        "summary": "discover-competitive-analysis: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:08:36.576429+00:00",
+      "updated_at": "2026-10-11T06:08:36.576429+00:00"
+    },
+    "create-prd": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/phuryn/pm-skills/create-prd",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:7934c73aab386da4",
+      "install_path": "create-prd",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/create-prd",
+        "source_revision": "c68487d721e419ec87af1ae6412a842978eab785"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:7934c73aab386da45e794743e0605c1ba8c3cb7dc9109f7404fe756a566d1478",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/phuryn/pm-skills/create-prd",
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/create-prd",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:08:57.284662+00:00",
+        "summary": "create-prd: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:08:57.291200+00:00",
+      "updated_at": "2026-10-11T06:08:57.291200+00:00"
+    },
+    "pre-mortem": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/phuryn/pm-skills/pre-mortem",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:dddad197d2c220c5",
+      "install_path": "pre-mortem",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/pre-mortem",
+        "source_revision": "c68487d721e419ec87af1ae6412a842978eab785"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:dddad197d2c220c5e956928dd5396bbe42810cdc000461d111d7aff982f1d1f7",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/phuryn/pm-skills/pre-mortem",
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/pre-mortem",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:09:29.499393+00:00",
+        "summary": "pre-mortem: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:09:29.512105+00:00",
+      "updated_at": "2026-10-11T06:09:29.512105+00:00"
+    },
+    "prioritization-frameworks": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/phuryn/pm-skills/prioritization-frameworks",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:7a106d8deed504ee",
+      "install_path": "prioritization-frameworks",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/prioritization-frameworks",
+        "source_revision": "c68487d721e419ec87af1ae6412a842978eab785"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:7a106d8deed504eee9b60f7a91e4975665d4e46ebb312d7fa8bb6b43d9173d5f",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/phuryn/pm-skills/prioritization-frameworks",
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/prioritization-frameworks",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:09:34.821977+00:00",
+        "summary": "prioritization-frameworks: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:09:34.832433+00:00",
+      "updated_at": "2026-10-11T06:09:34.832433+00:00"
+    },
+    "outcome-roadmap": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/phuryn/pm-skills/outcome-roadmap",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:b9e2bd95e8b1e8f1",
+      "install_path": "outcome-roadmap",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/outcome-roadmap",
+        "source_revision": "c68487d721e419ec87af1ae6412a842978eab785"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:b9e2bd95e8b1e8f17419764e3b62e76fb06d70fb9300a2874b06a4467a8ed867",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/phuryn/pm-skills/outcome-roadmap",
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/outcome-roadmap",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:09:40.341263+00:00",
+        "summary": "outcome-roadmap: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:09:40.349073+00:00",
+      "updated_at": "2026-10-11T06:09:40.349073+00:00"
+    },
+    "strategy-red-team": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/phuryn/pm-skills/strategy-red-team",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:4fd5cc4b2c14df01",
+      "install_path": "strategy-red-team",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/strategy-red-team",
+        "source_revision": "c68487d721e419ec87af1ae6412a842978eab785"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:4fd5cc4b2c14df01ede8edbdb960b659d2524eb26d9a7dcfe1c92b05a11bb745",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/phuryn/pm-skills/strategy-red-team",
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/strategy-red-team",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:09:45.373393+00:00",
+        "summary": "strategy-red-team: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:09:45.379543+00:00",
+      "updated_at": "2026-10-11T06:09:45.379543+00:00"
+    },
+    "competitor-analysis": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/phuryn/pm-skills/competitor-analysis",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:aa962e4f25ab8dc3",
+      "install_path": "competitor-analysis",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-market-research/skills/competitor-analysis",
+        "source_revision": "c68487d721e419ec87af1ae6412a842978eab785"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:aa962e4f25ab8dc3e4d9e0370d0d92e57d97ef25429cf24943c27cbb87a51280",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/phuryn/pm-skills/competitor-analysis",
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-market-research/skills/competitor-analysis",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:09:50.888988+00:00",
+        "summary": "competitor-analysis: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:09:50.897165+00:00",
+      "updated_at": "2026-10-11T06:09:50.897165+00:00"
+    },
+    "business-model": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/phuryn/pm-skills/business-model",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:a9d686baa1fea743",
+      "install_path": "business-model",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-product-strategy/skills/business-model",
+        "source_revision": "c68487d721e419ec87af1ae6412a842978eab785"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:a9d686baa1fea7439780fb4722bf05ebf0c3a729539869abba4d13a394dfcdfa",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/phuryn/pm-skills/business-model",
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-product-strategy/skills/business-model",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:09:55.898973+00:00",
+        "summary": "business-model: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:09:55.906873+00:00",
+      "updated_at": "2026-10-11T06:09:55.906873+00:00"
+    },
+    "privacy-policy": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/phuryn/pm-skills/privacy-policy",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:2c5d567ab31779f8",
+      "install_path": "privacy-policy",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-toolkit/skills/privacy-policy",
+        "source_revision": "c68487d721e419ec87af1ae6412a842978eab785"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:2c5d567ab31779f85032967b1cdb3020aef217814a310e6139a5d8ab0384cd63",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/phuryn/pm-skills/privacy-policy",
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-toolkit/skills/privacy-policy",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:10:01.257785+00:00",
+        "summary": "privacy-policy: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:10:01.266473+00:00",
+      "updated_at": "2026-10-11T06:10:01.266473+00:00"
+    },
+    "brainstorm-ideas-new": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/phuryn/pm-skills/brainstorm-ideas-new",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:9b8d98a0525ecfa9",
+      "install_path": "brainstorm-ideas-new",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-product-discovery/skills/brainstorm-ideas-new",
+        "source_revision": "c68487d721e419ec87af1ae6412a842978eab785"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:9b8d98a0525ecfa9d32000e65ebd68f41e4bab3bb35643076a1bfd037e30d589",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/phuryn/pm-skills/brainstorm-ideas-new",
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-product-discovery/skills/brainstorm-ideas-new",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:10:06.769491+00:00",
+        "summary": "brainstorm-ideas-new: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:10:06.797545+00:00",
+      "updated_at": "2026-10-11T06:10:06.797545+00:00"
+    },
+    "user-stories": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/phuryn/pm-skills/user-stories",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:ac9646542f8676b3",
+      "install_path": "user-stories",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/user-stories",
+        "source_revision": "c68487d721e419ec87af1ae6412a842978eab785"
+      },
+      "scan_provenance": {
+        "bundle_hash": "sha256:ac9646542f8676b34e25155553150bcda557fd3f156c4641ba5f9363fe554817",
+        "scanner_version": "skills-guard-v9",
+        "source": "skills-sh/phuryn/pm-skills/user-stories",
+        "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/user-stories",
+        "verdict": "safe",
+        "trust_level": "community",
+        "findings": [],
+        "rules": [],
+        "scanned_at": "2026-10-11T06:10:11.784432+00:00",
+        "summary": "user-stories: clean scan, no threats detected",
+        "fresh": true
+      },
+      "installed_at": "2026-10-11T06:10:11.807642+00:00",
+      "updated_at": "2026-10-11T06:10:11.807642+00:00"
+    }
+  }
+}

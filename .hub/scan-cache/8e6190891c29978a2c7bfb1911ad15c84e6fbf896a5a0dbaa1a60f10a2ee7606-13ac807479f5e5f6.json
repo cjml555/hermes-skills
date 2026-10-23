@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:8e6190891c29978a2c7bfb1911ad15c84e6fbf896a5a0dbaa1a60f10a2ee7606",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/product-on-purpose/pm-skills/deliver-prd",
+  "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/deliver-prd",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:08:06.764660+00:00",
+  "summary": "deliver-prd: clean scan, no threats detected",
+  "fresh": true
+}

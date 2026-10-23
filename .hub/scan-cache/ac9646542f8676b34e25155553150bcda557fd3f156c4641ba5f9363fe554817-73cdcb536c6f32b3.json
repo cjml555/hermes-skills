@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:ac9646542f8676b34e25155553150bcda557fd3f156c4641ba5f9363fe554817",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/phuryn/pm-skills/user-stories",
+  "source_url": "https://github.com/phuryn/pm-skills/tree/c68487d721e419ec87af1ae6412a842978eab785/pm-execution/skills/user-stories",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:10:11.784432+00:00",
+  "summary": "user-stories: clean scan, no threats detected",
+  "fresh": true
+}

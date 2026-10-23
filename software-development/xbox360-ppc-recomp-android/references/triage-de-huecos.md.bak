@@ -1,0 +1,281 @@
+# Triagear y declarar los huecos de codigo
+
+Como decidir **que** huecos declarar, como declararlos sin romper el build, y como
+distinguir los que son problema de los que no.
+
+Distinto de `scripts/fix_orphan_branches.py`, que resuelve *ramas huerfanas*
+(destinos que el validador reporta). Aqui van los *huecos*: bloques de codigo
+sin dueno que el informe `scripts/huecos.py` lista.
+
+---
+
+## 1. El informe de huecos NO es el juez
+
+`scripts/huecos.py` mide el **C++ generado**: recorre los bloques de cada
+funcion y cuenta los comentarios `// <asm>` para saber donde acaba. Todo lo
+que queda entre el fin de una funcion y el inicio de la siguiente es un hueco.
+
+De ahi sale un informe con **muchos falsos positivos**:
+
+- **Un hueco listado puede tener ya su funcion.** El Discover reclamo la
+  direccion con un tamano **menor** que el hueco, asi que la funcion existe
+  (y esta registrada) pero el hueco sigue apareciendo en la lista. Declararlo
+  otra vez no aporta nada.
+- **El informe caduca con cada codegen.** En cuanto el codegen reescribe las
+  funciones, los limites cambian y el informe queda obsoleto. Reléelo
+  antes de cada ronda.
+
+**El juez real es la tabla de funciones registradas**, en el fichero de
+inicializacion que genera el codegen (`<proyecto>_init.cpp`):
+
+```bash
+# funciones de juego:  { 0xADDR, sub_XXXXXXXX }
+grep -oE '\{ 0x[0-9A-F]+, sub_' generated/default/<proyecto>_init.cpp | wc -l
+# imports del kernel:    { 0xADDR, __imp__Xxx }
+grep -oE '\{ 0x[0-9A-F]+, __imp__' generated/default/<proyecto>_init.cpp | wc -l
+```
+
+Un hueco cuyo inicio ya aparece como `sub_` **no es un problema**: tiene
+dueno. Solo los que no aparecen en ninguna de las dos tablas son huecos
+reales sin cubrir.
+
+`scripts/triage_huecos.py` hace esta comprobacion y deja la lista limpia.
+
+## 2. Un hueco puede ser la TABLA DE IMPORTS del kernel
+
+**El fallo mas caro de esta area, y el que no se ve hasta el enlazado.**
+
+Un hueco grande (4 KB) con **246 entradas espaciadas 16 bytes** no era codigo:
+era la **tabla de imports del kernel** (`__imp__XGetVideoMode`,
+`__imp__XamShowSigninUI`, `__imp__XamShowAchievementsUI`, ...).
+
+Declararlo cada 8 bytes lo destrozo: el codegen dejo de registrar esas
+direcciones como imports, paso a registrarlas como funciones del juego que
+**no emite**, y el enlace fallo con **246 `undefined reference to
+sub_XXXXXXXX`**.
+
+Los imports **no son codigo**: son punteros a funciones del kernel, y el
+guest llama a traves de ellos. Declararlos como funciones del juego es
+doble, y rompe.
+
+**Como detectarlo antes de romper nada:**
+
+```bash
+# los imports que el binario ya registra
+grep -oE '\{ 0x[0-9A-F]+, __imp__' generated/default/<proyecto>_init.cpp \
+  | grep -oE '0x[0-9A-F]+'
+```
+
+Un hueco que **contenga** alguna de esas direcciones es la tabla de imports
+(las entradas son de 8 bytes pero van en pasos de 16, asi que basta con que
+una direccion caiga dentro del rango del hueco). Excluyelo entero.
+
+**La pista estatica que lo delata sin ejecutar nada:** muchos huecos del
+**mismo tamano** separados por el **mismo intervalo** son una tabla, no
+codigo. En el caso real: 8 huecos de 48 bytes separados por `0x190`.
+
+```bash
+# agrupar los huecos por (tamano, separacion con el siguiente)
+python3 scripts/triage_huecos.py <proyecto> --agrupar
+```
+
+## 3. Codigo o datos: mirar los BYTES, no adivinar por el tamano
+
+Un hueco sin dueno puede contener **codigo** (instrucciones PPC que hay que
+traducir) o **datos** (una tabla de punteros, una constante). Declarar
+datos como funcion rompe el codegen.
+
+La forma fiable es **mirar los bytes**: el guest se puede volcar a disco y
+desensamblar con capstone.
+
+### Volcar la imagen del invitado
+
+Un cvar en el proyecto (Carbon ya lo tiene: `carbon_dump_image`):
+
+```cpp
+// src/<juego>_app.h
+REXCVAR_DECLARE(bool, <juego>_dump_image);
+
+void OnPostSetup() override {
+  // ... lo de siempre ...
+  if (!REXCVAR_GET(<juego>_dump_image)) return;
+  auto path = runtime()->cache_root() / "<juego>-82000000.bin";
+  std::ofstream image(path, std::ios::binary);
+  image.write(reinterpret_cast<const char*>(runtime()->virtual_membase() +
+                                            PPCImageConfig.image_base),
+              PPCImageConfig.image_size);
+  REXLOG_INFO("[<juego>] loaded image saved to {}", path.string());
+}
+```
+
+```cpp
+// src/main.cpp
+REXCVAR_DEFINE_BOOL(<juego>_dump_image, false, "<Juego> diagnostics",
+                    "Save the loaded executable locally for address analysis");
+```
+
+Los dos sitios hacen falta: `REXCVAR_DEFINE_BOOL` **define**, y
+`REXCVAR_DECLARE` **declara** el simbolo para que lo vea el header. Sin el
+`DECLARE` el build falla con `FLAGS_<juego>_dump_image_storage_` sin
+definir.
+
+Se activa por linea de comandos y deja el volcado en el cache root:
+
+```bash
+./out/pc/<juego> --video_driver=offscreen --<juego>_dump_image=true
+# -> out/runtime/cache/<juego>-82000000.bin   (~10 MB, base 0x82000000)
+```
+
+### Desensamblar una direccion
+
+```python
+from capstone import CS_ARCH_PPC, CS_MODE_32, CS_MODE_BIG_ENDIAN, Cs
+img = open('out/runtime/cache/<juego>-82000000.bin', 'rb').read()
+off = 0x8260BACC - 0x82000000
+for i in Cs(CS_ARCH_PPC, CS_MODE_32 | CS_MODE_BIG_ENDIAN).disasm(img[off:off+32], 0x8260BACC):
+    print(f'{i.address:08X}  {i.bytes.hex()}  {i.mnemonic:8} {i.op_str}')
+```
+
+Instrucciones PPC validas (`addi`, `mr`, `lwzx`, `srawi`, `clrlwi`, `cmpwi`,
+`blt`...) = codigo. Una secuencia de palabras que apuntan a direcciones de
+la imagen = tabla de punteros = datos.
+
+Si capstone no esta importable con el `python3` del shell, esta en el
+*user site* de otra version: `PYTHONPATH=$(python3 -m site --user-site)
+python3 ...`.
+
+## 4. Declarar en tramos de 8 bytes, no solo el inicio
+
+Un hueco puede contener **varias funciones seguidas** (thunks de 8 y 16
+bytes). Declarar solo el inicio hace que el Discover se lo trague entero
+como una sola funcion, y las demas entradas quedan inalcanzables: el crash
+se **mueve** a +8, +24, +64... bytes dentro del mismo hueco.
+
+Por eso, un hueco que ya ha reventado se declara **cada 8 bytes**:
+
+```toml
+"0x82554060" = { }
+"0x82554068" = { }
+"0x82554070" = { }
+"0x82554078" = { }
+"0x82554080" = { }
+```
+
+Esto se aplica igual a los huecos que aun no han reventado: al declararlos
+por tramos, todos sus posibles entry points quedan cubiertos.
+
+**Aviso sobre el efecto secundario:** declarar por tramos crea huecos
+*nuevos* mas pequenos entre las entradas (los 8 bytes que quedan entre
+funcion y funcion son ahora huecos de 4). Asi que **el numero de huecos
+sube** aunque los problemas reales bajen. Mide el progreso por las
+funciones registradas, no por el total de huecos del informe.
+
+## 5. Declarar de a poco: piloto, backup y vuelta atras
+
+Declarar cientos de entradas a la vez es barato de escribir y caro de
+arreglar si el codegen se rompe. El orden que funciona:
+
+1. **Piloto de 5 huecos.** Declara 5, regenera, compila, corre el juego.
+   Si el codegen pasa y el juego arranca con los mismos pipelines y 0
+   fatales, el mecanismo esta bien.
+2. **Backup del analysis** antes de tocar nada, y **restauralo** si el
+   codegen falla. Sin esto, un lote roto deja el analysis a medias y la
+   siguiente ronda empieza sobre un estado ya cambiado.
+3. **Lote completo**, con el mismo criterio de aceptacion: codegen OK, el
+   juego arranca, y **sigue avanzando igual** (mismos pipelines, 0 fatales,
+   y el guardado se sigue escribiendo). Un hueco declarado de mas no se
+   ve en el arranque: se ve en que el juego deja de llegar al mismo sitio.
+
+```bash
+python3 scripts/triage_huecos.py <proyecto> --piloto     # 5 huecos
+python3 scripts/triage_huecos.py <proyecto>              # todos los >=8
+```
+
+El script mide las tres cosas: quantas entradas quedan declaradas, cuantas
+son funciones registradas, y si el juego arranca con los mismos pipelines
+y 0 fatales.
+
+## 6. Cuando el codegen emite un branch a una etiqueta que EL emitio
+
+Un fallo que **no** es un hueco y que el hunting no encuentra, porque no
+produce un crash de "invalid or unregistered function" sino otro:
+
+```
+[FATAL] Unresolved branch from 0x8260C400 to 0x8260BACC
+```
+
+Y en el **mismo fichero generado**, la etiqueta existe:
+
+```cpp
+loc_8260BACC:            // linea 27416, en la funcion 0x8260B990
+    // addi r10,r26,66
+    ...
+    // blt cr6,0x8260bacc
+    // ERROR: conditional branch to unknown address 0x8260BACC
+    if (ctx.cr6.lt) REX_FATAL("Unresolved branch from 0x8260C400 to 0x8260BACC");
+```
+
+**Como se lee:** el codegen **si** genero la etiqueta y **si** la emitio;
+lo que no hizo fue resolver el branch a ella. No es un hueco: el codigo
+existe y esta traducido.
+
+**Por que pasa:** el Discover partir una funcion grande en dos. La
+segunda mitad empieza como "funcion" y se alcanza con un branch desde la
+primera, y ese branch cae sobre una etiqueta **dentro de la primera
+mitad**. El destino no es entry point (asi que no es una llamada) y no
+esta dentro del rango de la funcion que hace el branch (asi que no es una
+etiqueta interna de la que llama): el clasificador lo deja como
+`Unknown` y emite el fatal.
+
+El clasificador esta en `src/codegen/function_graph.cpp`, en
+`FunctionGraph::classifyTarget`, y sus casos son:
+
+1. `isImport(target)` -> import
+2. `target == callerFn->base()` -> funcion propia
+3. `isEntryPoint(target)` -> funcion
+4. `callerFn->containsAddress(target)` -> etiqueta interna
+5. **Unknown** -> aqui cae este caso
+
+**El sitio del arreglo** es el caso 5: si el destino es una etiqueta que
+el codegen emite en **otra** funcion del modulo, el branch tiene que ser
+un `goto loc_XXXXXXXX;` a esa etiqueta, no un fatal. La etiqueta se
+emite desde el conjunto `labels` que cada funcion recoge en su primera
+pasada (`src/codegen/function_graph.cpp`), y ese conjunto hay que
+publicarlo a nivel de modulo para que el clasificador lo consulte: las
+funciones se emiten **en orden de direccion**, asi que un branch puede
+evaluarse **antes** de que la funcion que posee la etiqueta haya
+publicado la suya.
+
+> Estado: el diagnostico de arriba esta verificado, y el arreglo **validado**\n> en MCLA: 737 branches sin resolver bajaron a 3 despues de publicar los\n> labels a nivel de modulo y pre-registrarlos **antes** de emitir ninguna\n> funcion. El codigo generado compila y el juego arranca.\n```bash\n# cuantos branches sin resolver quedan\ngrep -c "ERROR: conditional branch to unknown address" generated/default/<proyecto>_recomp.*.cpp | grep -v ':0$'\n```\n\n## 6b. Arreglo validado: pre-registrar labels a nivel de modulo\n\nEl clasificador (`FunctionGraph::classifyTarget`) caia a `Unknown` cuando\nun branch apuntaba a una etiqueta dentro de otra funcion del mismo modulo.\nEso pasa porque el Discover parte funciones grandes en dos, y la segunda\nmitad branch a una etiqueta en la primera.\n\nLa causa no era solo \"no mirar labels de otras funciones\": era tambien el\n**orden de emision**. Las funciones se emiten en orden de direccion, y un\nbranch desde una funcion emitida despues evalua el clasificador ANTES de\nque la funcion dueno haya publicado su label. El conjunto tenia que estar\ncompleto desde el principio.\n\n**El arreglo consta de tres partes:**\n\n1. `FunctionGraph` obtiene un conjunto module-wide `moduleLabels_` (mutable)\n   con `registerModuleLabel()` e `isModuleLabel()`.\n2. Antes del bucle de emision, el writer llama a `collectEmittedLabels()`\n   sobre **cada funcion** del modulo. Ese metodo recorre los bloques de la\n   funcion y recoge branches, jump tables y mid-asm hooks **sin emitir**.\n3. Esos labels se publican en `moduleLabels_` antes de que empiece el\n   primer `emitCpp`. Asi, cuando un branch tarde evalue `classifyTarget`,\n   `isModuleLabel()` ya responde `true` sin importar el orden.\n\n**Dependencia circular resuelta:** `function_node.h` no puede incluir\n`config.h` porque `config.h` incluye `function_graph.h`, que incluye\n`function_node.h`. Los `MidAsmHook` se registran aparte en el writer,\ndonde `config.h` ya esta disponible.\n\n**Const-correctness:** el writer sostiene las funciones a traves de un\n`const FunctionNode*`, asi que `collectEmittedLabels()` tiene que ser\n`const` y el conjunto `emittedLabels_` tiene que ser `mutable`.\n\nSi el arreglo esta en el SDK propio, parchealo alli; si no, sobreescribe\n`classifyTarget` en el proyecto para consultar `moduleLabels_` despues de\nlos casos 1-4.
+
+```bash
+# cuantos branches sin resolver quedan
+grep -c "ERROR: conditional branch to unknown address" generated/default/<proyecto>_recomp.*.cpp | grep -v ':0$'
+```
+
+## 7. Recipe: triagear y declarar, de punta a punta
+
+```bash
+# 1. Medir el estado (el informe caduca: regeneralo)
+python3 <proyecto>/scripts/huecos.py --gen <proyecto>/generated/default \
+    --salida out/huecos_now.txt
+
+# 2. Que huecos son reales (tienen funcion? tocan la tabla de imports?)
+python3 <skill>/scripts/triage_huecos.py <proyecto> --informe
+
+# 3. Mirar los bytes de los sospechosos (codigo o datos)
+python3 <skill>/scripts/triage_huecos.py <proyecto> --bytes 0x8260BACC
+
+# 4. Declarar de a poco
+python3 <skill>/scripts/triage_huecos.py <proyecto> --piloto
+python3 <skill>/scripts/triage_huecos.py <proyecto>
+
+# 5. Verificar que nada se rompio
+cmake --build <proyecto>/out/pc --target <juego> --parallel 4
+./<proyecto>/out/pc/<juego> --video_driver=offscreen   # mismo conteo, 0 fatales
+```
+
+Criterio de aceptacion de cada ronda: **codegen OK**, **el juego arranca
+con los mismos pipelines**, **0 fatales**, y **el juego sigue llegando al
+mismo sitio** (el guardado se sigue escribiendo). Un hueco declarado de mas
+no rompe el arranque: rompe el avance.

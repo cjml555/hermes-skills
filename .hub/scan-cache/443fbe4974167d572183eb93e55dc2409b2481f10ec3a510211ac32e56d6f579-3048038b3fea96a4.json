@@ -1,0 +1,152 @@
+{
+  "bundle_hash": "sha256:443fbe4974167d572183eb93e55dc2409b2481f10ec3a510211ac32e56d6f579",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/product-on-purpose/pm-skills/utility-pm-skill-builder",
+  "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/utility-pm-skill-builder",
+  "verdict": "dangerous",
+  "trust_level": "community",
+  "findings": [
+    {
+      "pattern_id": "agent_config_mod",
+      "severity": "critical",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 260,
+      "match": "3. Append the AGENTS.md entry from the packet; if Step 4.5 declared a collision pair, add it to `COLLISION_PAIRS` in ...",
+      "description": "instructs modification of agent config files (could persist instructions across sessions)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 55,
+      "match": "below (derive the live inventory from `skill-manifest.json` or `AGENTS.md`)",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 199,
+      "match": "10. **AGENTS.md Entry** - exact text to add",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 260,
+      "match": "3. Append the AGENTS.md entry from the packet; if Step 4.5 declared a collision pair, add it to `COLLISION_PAIRS` in ...",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 284,
+      "match": "- **`AGENTS.md`** - generated, human-browsable; the same catalog grouped by",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 301,
+      "match": "For gap analysis (Step 2), read `skill-manifest.json` or `AGENTS.md` in",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 318,
+      "match": "On promotion, files are copied to canonical locations, AGENTS.md is",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 333,
+      "match": "- [ ] AGENTS.md entry uses `####` + `**Path:**` format",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "HISTORY.md",
+      "line": 5,
+      "match": "| 1.2.0 | 2026-07-04 | v2.30.0 | M-35 | minor | Replaced the hand-maintained \"Current Library Reference\" tables (a 10...",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "HISTORY.md",
+      "line": 19,
+      "match": "- Added an instruction to derive the live inventory at run time from `skill-manifest.json` or `AGENTS.md`, both gener...",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "evals/trigger-fixtures.json",
+      "line": 82,
+      "match": "\"q\": \"Run a full pass over the skills catalog and flag drifted headings, stale AGENTS.md entries, and anything that w...",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "references/EXAMPLE.md",
+      "line": 231,
+      "match": "## AGENTS.md Entry",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "references/EXAMPLE.md",
+      "line": 256,
+      "match": "- [x] AGENTS.md entry uses `#### change-communication` + `**Path:**` format",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "references/TEMPLATE.md",
+      "line": 137,
+      "match": "## AGENTS.md Entry",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "references/TEMPLATE.md",
+      "line": 166,
+      "match": "- [ ] AGENTS.md entry uses `#### {name}` + `**Path:**` format (`validate-agents-md.sh`)",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    }
+  ],
+  "rules": [
+    "agent_config_mod",
+    "agent_config_ref"
+  ],
+  "scanned_at": "2026-10-11T06:07:23.954351+00:00",
+  "summary": "utility-pm-skill-builder: dangerous \u2014 15 finding(s) in persistence",
+  "fresh": true
+}

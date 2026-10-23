@@ -1,0 +1,61 @@
+{
+  "bundle_hash": "sha256:1f403d52591e864d3e858aeb6a61be70682c4eab7ad06f49f5c11b16527cd29e",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/product-on-purpose/pm-skills/utility-update-pm-skills",
+  "source_url": "https://github.com/product-on-purpose/pm-skills/tree/1cef1a9eae10017389863d51e289e0ae41e17fcb/skills/utility-update-pm-skills",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 180,
+      "match": "`commands/`, `AGENTS.md`, and `.claude-plugin/plugin.json`. If",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 202,
+      "match": "- File integrity: `AGENTS.md`, `skills/`, `commands/`, `_workflows/`",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 264,
+      "match": "| `AGENTS.md` | Skill discovery for IDEs |",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "SKILL.md",
+      "line": 314,
+      "match": "- [ ] File integrity: AGENTS.md, skills/, commands/, _workflows/ exist",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    },
+    {
+      "pattern_id": "agent_config_ref",
+      "severity": "low",
+      "category": "persistence",
+      "file": "references/EXAMPLE.md",
+      "line": 88,
+      "match": "| File integrity | PASS -- AGENTS.md, skills/, commands/, _workflows/ all present |",
+      "description": "references agent config files (informational; only modification intent is scored)"
+    }
+  ],
+  "rules": [
+    "agent_config_ref"
+  ],
+  "scanned_at": "2026-10-11T06:05:33.603875+00:00",
+  "summary": "utility-update-pm-skills: safe \u2014 5 finding(s) in persistence",
+  "fresh": true
+}

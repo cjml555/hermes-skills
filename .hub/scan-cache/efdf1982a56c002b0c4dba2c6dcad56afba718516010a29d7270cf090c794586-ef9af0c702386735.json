@@ -1,0 +1,13 @@
+{
+  "bundle_hash": "sha256:efdf1982a56c002b0c4dba2c6dcad56afba718516010a29d7270cf090c794586",
+  "scanner_version": "skills-guard-v9",
+  "source": "skills-sh/obra/superpowers-skills/collision-zone-thinking",
+  "source_url": "https://github.com/obra/superpowers-skills/tree/cdcd624ad3fd8026deb692e565351854569798dd/skills/problem-solving/collision-zone-thinking",
+  "verdict": "safe",
+  "trust_level": "community",
+  "findings": [],
+  "rules": [],
+  "scanned_at": "2026-10-11T06:04:04.269663+00:00",
+  "summary": "collision-zone-thinking: clean scan, no threats detected",
+  "fresh": true
+}
