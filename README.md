@@ -1,28 +1,25 @@
 # Hermes Skills & Plugins Backup
 
-Respaldo portable de **142 skills** (77 categorías) y **6 plugins** de Hermes Agent.
+Respaldo portable de **skills** y **plugins** de Hermes Agent.  
 Listo para copiar a otro PC.
 
 ## Contenido
 
 ```
 hermes-skills/
-├── skills/          # 77 skills (121 MB)
-│   ├── xbox360-ppc-recomp-android/
-│   ├── android-kotlin/
-│   ├── cloudflare/
-│   ├── ...
-│   └── (77 skills en total)
-├── plugins/         # 6 plugins (14 MB)
-│   ├── hermes-relay/       # Gateway relay para canales de chat
-│   ├── holographic/        # Diagramas SVG arquitectónicos
-│   ├── homeassistant/      # Integración con Home Assistant
-│   ├── honcho/             # Cloudflare Honcho
-│   ├── quota/              # Límites y cuotas
-│   └── spotify/            # Integración con Spotify
-├── README.md
-└── INSTALL.md
+├── README.md              # Este archivo
+├── INSTALL.md             # Guía de instalación
+├── (skills en la raíz)    # 77 skills (121 MB)
+├── plugins/               # 6 plugins (14 MB)
+│   ├── hermes-relay/      # Gateway relay para canales de chat
+│   ├── holographic/       # Diagramas SVG arquitectónicos
+│   ├── homeassistant/     # Integración con Home Assistant
+│   ├── honcho/            # Cloudflare Honcho
+│   ├── quota/             # Límites y cuotas
+│   └── spotify/           # Integración con Spotify
 ```
+
+**Total:** 77 skills + 6 plugins = ~135 MB
 
 ## Instalación
 
@@ -33,7 +30,7 @@ hermes-skills/
 ### Opción A: Clonar desde GitHub
 ```bash
 git clone https://github.com/cjml555/hermes-skills.git ~/.hermes/skills-temp
-cp -r ~/.hermes/skills-temp/skills/* ~/.hermes/skills/
+cp -r ~/.hermes/skills-temp/* ~/.hermes/skills/
 cp -r ~/.hermes/skills-temp/plugins/* ~/.hermes/plugins/
 rm -rf ~/.hermes/skills-temp
 ```
@@ -41,15 +38,15 @@ rm -rf ~/.hermes/skills-temp
 ### Opción B: Copiar carpeta completa (sin Git)
 ```bash
 # Desde USB, red, o cualquier medio de transferencia
-cp -r /ruta/origen/hermes-skills/skills/* ~/.hermes/skills/
+cp -r /ruta/origen/hermes-skills/* ~/.hermes/skills/
 cp -r /ruta/origen/hermes-skills/plugins/* ~/.hermes/plugins/
 ```
 
 ### Opción C: Instalar skills individuales
 ```bash
 # Solo skills específicos
-cp -r /ruta/origen/hermes-skills/skills/xbox360-ppc-recomp-android ~/.hermes/skills/
-cp -r /ruta/origen/hermes-skills/skills/android-kotlin ~/.hermes/skills/
+cp -r /ruta/origen/hermes-skills/android-kotlin ~/.hermes/skills/
+cp -r /ruta/origen/hermes-skills/xbox360-ppc-recomp-android ~/.hermes/skills/
 ```
 
 ## Verificación
